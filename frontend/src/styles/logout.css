@@ -1,0 +1,19 @@
+/* Logout Component */
+.logout-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .logout-button {
+    padding: 10px 20px;
+    background-color: #ff4d4f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  .logout-button:hover {
+    background-color: #ff7875;
+  }
+  

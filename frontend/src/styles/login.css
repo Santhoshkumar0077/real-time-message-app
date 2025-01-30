@@ -1,0 +1,47 @@
+/* global.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+  }
+  
+  input, button {
+    font-family: inherit;
+  }
+  
+  button {
+    cursor: pointer;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 30px;
+    height: 100vh;
+   background-color: rgb(175, 205, 231);
+  }
+  .container input{
+    width: 200px;
+    height: 25px;
+  }
+  .container h1{
+    font-size: 3rem;
+  }
+  .container button{
+      font-size: medium;
+      background-color: aqua;
+      border-radius: 5px;
+      cursor: pointer;
+  }
