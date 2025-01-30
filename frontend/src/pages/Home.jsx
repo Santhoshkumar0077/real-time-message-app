@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Searchbar from "../components/Searchbar";
 import Listeduser from "../components/Listeduser";
 import Logout from "../components/Logout";
-import Conversationheading from "../components/Conversationheading";
 import MessageList from "../components/MessageList";
 import SendMessage from "../components/SendMessage";
 import { useDispatch, useSelector } from "react-redux";
@@ -73,7 +72,7 @@ const Home = () => {
             <Logout />
           </div>
           <div className="conversation">
-            <Conversationheading />
+            <Conversationheadingmobile />
             <MessageList />
             <SendMessage />
           </div>
