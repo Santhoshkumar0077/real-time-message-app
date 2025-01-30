@@ -13,7 +13,7 @@ import {
 } from "../features/userSlice";
 import { useNavigate } from "react-router-dom";
 import "../styles/home.css";
-import Conversationheadingmobile from "../components/Conversationheadingmobile";
+import Conversationheading from "../components/Conversationheading";
 
 const Home = () => {
   const [isvalid, setIsvalid] = useState(false);
@@ -53,7 +53,7 @@ const Home = () => {
       {mobileView ? (
         selectedid ? ( // Check if a user is selected in Redux
           <div className="conversation">
-            <Conversationheadingmobile />
+            <Conversationheading />
             <MessageList />
             <SendMessage />
           </div>
@@ -72,7 +72,7 @@ const Home = () => {
             <Logout />
           </div>
           <div className="conversation">
-            <Conversationheadingmobile />
+            <Conversationheading />
             <MessageList />
             <SendMessage />
           </div>
