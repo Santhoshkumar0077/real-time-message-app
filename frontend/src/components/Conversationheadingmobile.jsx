@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import "../styles/Conversationheading.css";
+import "../styles/conversationheading.css";
 import { resetback } from "../features/userSlice";
 import { IoArrowBackSharp } from "react-icons/io5";
 
