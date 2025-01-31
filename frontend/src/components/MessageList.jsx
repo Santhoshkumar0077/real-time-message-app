@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { setSocket } from "../features/socketSlice";
+import { useSelector } from "react-redux";
 import "../styles/messagelist.css";
 
 const MessageList = () => {
