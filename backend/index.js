@@ -14,7 +14,7 @@ app.use(cors());
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:5173",
+    origin: "https://real-time-message-app-kbej.onrender.com/",
     methods: ["GET", "POST"],
   },
 });
