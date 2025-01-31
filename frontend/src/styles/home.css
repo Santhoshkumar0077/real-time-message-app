@@ -50,7 +50,7 @@ a {
     overflow-y: auto;
     border-left: 1px solid #ddd;
     height: 90vh;
-    width: 100vh;
+    width: auto;
     margin-left: 0%;
     margin-right: 0%;
   }
