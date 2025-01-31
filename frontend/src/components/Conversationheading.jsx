@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector,useDispatch } from "react-redux";
-import "../styles/Conversationheading.css";
+import "../styles/conversationheading.css";
 import { resetback } from "../features/userSlice";
 
 const Conversationheading = () => {
