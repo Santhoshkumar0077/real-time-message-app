@@ -32,6 +32,9 @@ a {
   padding: 10px;
 }
 .sidebar {
+  box-sizing: border-box;
+  padding: 0%;
+  margin: 0%;
   display: grid;
   grid-template-rows: 40px auto 40px; /* SearchBar, ListedUser, Logout */
   background-color: #fff;
@@ -42,12 +45,14 @@ a {
   height: 100vh;
 }
 .conversation {
-    display: grid;
-    grid-template-rows: auto 1fr auto; /* ConversationHeading, MessageList, InputField */
-    background-color: #fff;
-    padding: 15px;
-    gap: 15px;
-    overflow-y: auto;
-    border-left: 1px solid #ddd;
-    height: 100vh;
-  }
+  box-sizing: border-box;
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* ConversationHeading, MessageList, InputField */
+  background-color: #fff;
+  padding: 0%;
+  margin: 0%;
+  gap: 15px;
+  overflow-y: auto;
+  border-left: 1px solid #ddd;
+  height: 100vh;
+}
