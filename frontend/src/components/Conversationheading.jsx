@@ -13,7 +13,7 @@ const Conversationheading = () => {
   return (
 
     <>
-      <button onClick={handleback} style={{display:"block", width:"50px", height:"auto"}}>back</button>
+      <button onClick={handleback} className="back-button">back</button>
       <div className="conversation-heading">
         <h2 className="heading-title">Conversation to {selectedusername}</h2>
       </div>
