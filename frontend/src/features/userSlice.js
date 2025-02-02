@@ -46,7 +46,8 @@ const userSlice = createSlice({
         (state.currentconversation = {});
     },
     resetback: (state) => {
-        (state.selecteduserid = null);
+      state.selecteduserid = null;
+      state.currentconversation = {};
     },
   },
 });
@@ -61,6 +62,6 @@ export const {
   setselectedusername,
   setcurrentconversation,
   setselecteduserid,
-  resetstate
+  resetstate,
 } = userSlice.actions;
 export default userSlice.reducer;

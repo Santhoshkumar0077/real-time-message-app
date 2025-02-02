@@ -5,14 +5,36 @@
   padding: 10px;
   border-bottom: 1px solid #ddd;
 }
+.back-arrow {
+  width: 40px; /* Width of the arrow */
+  height: 40px; /* Height of the arrow */
+  position: relative;
+  cursor: pointer;
+}
 
-.back-button {
-  color: rgb(0, 0, 0); /* White text */
-  padding: 10px 20px; /* Padding around the text */
-  border: none; 
-  font-size: 16px; /* Text size */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: background-color 0.3s ease; /* Smooth background change on hover */
+/* Arrow shape */
+.back-arrow::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px; /* Thickness of the arrow */
+  background-color: #000; /* Arrow color */
+  transform: translateY(-50%);
+}
+
+/* Arrow head */
+.back-arrow::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 15px; /* Size of the arrow head */
+  height: 15px; /* Size of the arrow head */
+  border-left: 2px solid #000; /* Arrow head color */
+  border-bottom: 2px solid #000; /* Arrow head color */
+  transform: translateY(-50%) rotate(45deg); /* Rotate to form the arrow head */
 }
 
 .heading-title {
