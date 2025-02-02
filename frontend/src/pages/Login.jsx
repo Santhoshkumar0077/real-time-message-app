@@ -8,7 +8,8 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
-  const handleloggin = async () => {
+  const handleloggin = async (e) => {
+    e.preventDefault();
     try {
       const res = await axiosInstance.post("api/login", { username, password });
       localStorage.setItem("token", res.data.token);
