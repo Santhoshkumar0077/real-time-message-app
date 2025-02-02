@@ -14,8 +14,10 @@ const Login = () => {
       const res = await axiosInstance.post("api/login", { username, password });
       localStorage.setItem("token", res.data.token);
       navigate("/");
-    } catch (error) {
-      console.log(error.message);
+    } catch (err) {
+      setError(
+        err.response?.data?.message || "Login failed. Please try again."
+      );
     }
   };
   return (
@@ -48,6 +50,19 @@ const Login = () => {
             Submit
           </button>
         </form>
+        {error && (
+          <div
+            style={{
+              color: "red",
+              padding: "10px",
+              margin: "10px 0",
+              border: "1px solid red",
+              borderRadius: "4px",
+            }}
+          >
+            {error}
+          </div>
+        )}
         <div class="signup-link">
           <p>
             Don't have an account? <Link to={"/signup"}>Sign Up</Link>

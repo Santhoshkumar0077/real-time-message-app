@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 const Signup = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
   const handleloggin = async (e) => {
     e.preventDefault();
@@ -18,8 +18,10 @@ const Signup = () => {
       setInterval(() => {
         navigate("/login");
       }, 1000);
-    } catch (error) {
-      setMessage(error.message);
+    } catch (err) {
+      setError(
+        err.response?.data?.message || "Signup failed. Please try again."
+      );
     }
   };
   return (
@@ -52,6 +54,19 @@ const Signup = () => {
             Submit
           </button>
         </form>
+        {error && (
+          <div
+            style={{
+              color: "red",
+              padding: "10px",
+              margin: "10px 0",
+              border: "1px solid red",
+              borderRadius: "4px",
+            }}
+          >
+            {error}
+          </div>
+        )}
         <div class="signup-link">
           <p>
             Already have an account? <Link to={"/login"}>Sign Up</Link>
