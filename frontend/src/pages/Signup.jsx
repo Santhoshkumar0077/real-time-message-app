@@ -20,7 +20,7 @@ const Signup = () => {
         navigate("/login");
       }, 1000);
     } catch (error) {
-      setMessage(error.res.data.message)
+      setMessage(res.data.message)
     }
   };
   return (
