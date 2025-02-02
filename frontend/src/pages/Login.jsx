@@ -44,7 +44,7 @@ const Login = () => {
             />
           </div>
           <button type="submit" class="login-button" onClick={handleloggin}>
-            Login
+            Submit
           </button>
         </form>
         <div class="signup-link">
