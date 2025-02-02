@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axiosInstance from "../lib/axiosInstance";
 import { Link, useNavigate } from "react-router-dom";
-import "../styles/login.css"
 
 const Signup = () => {
   const [username, setUsername] = useState("");
@@ -20,34 +19,44 @@ const Signup = () => {
         navigate("/login");
       }, 1000);
     } catch (error) {
-      setMessage(res.data.message)
+      setMessage(error.message);
     }
   };
   return (
-    <div>
-      <div className="container">
-        <h1 className="items">Signup</h1>
-        <div className="items">Username</div>
-        <input
-          className="items"
-          type="text"
-          name=""
-          id=""
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <div className="items"> Password</div>
-        <input
-          className="items"
-          type="text"
-          name=""
-          id=""
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button className="items" onClick={handleloggin}>
-          Submit
-        </button>
-        <div className="items">{message}</div>
-        <Link to={"/login"}>Already have an account</Link>
+    <div class="login-container ">
+      <div class="login-box">
+        <h2>Welcome Back!</h2>
+        <p>Please signup to your account</p>
+        <form class="login-form">
+          <div class="input-group">
+            <label for="username">Username</label>
+            <input
+              type="text"
+              id="username"
+              placeholder="Enter your username"
+              required
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </div>
+          <div class="input-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              placeholder="Enter your password"
+              required
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <button type="submit" class="login-button" onClick={handleloggin}>
+            Login
+          </button>
+        </form>
+        <div class="signup-link">
+          <p>
+            Already have an account? <Link to={"/login"}>Sign Up</Link>
+          </p>
+        </div>
       </div>
     </div>
   );
