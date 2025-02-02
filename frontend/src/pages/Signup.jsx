@@ -27,8 +27,7 @@ const Signup = () => {
   return (
     <div class="login-container ">
       <div class="login-box">
-        <h2>Welcome Back!</h2>
-        <p>Please signup to your account</p>
+        <h2>Please signup to your account</h2>
         <form class="login-form">
           <div class="input-group">
             <label for="username">Username</label>

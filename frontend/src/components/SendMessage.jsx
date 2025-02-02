@@ -35,7 +35,7 @@ const SendMessage = () => {
         loggeduserid,
         input,
       });
-      setInput('')
+      setInput('');
       console.log("Input after clearing:", input);
 
     } catch (error) {
@@ -47,7 +47,7 @@ const SendMessage = () => {
     <form className="input-field-container" onSubmit={sendmessage}>
       <input
         type="text"
-        value={input}
+        value={input || ""}
         className="message-input"
         placeholder="Type any to send"
         onChange={(e) => setInput(e.target.value)}

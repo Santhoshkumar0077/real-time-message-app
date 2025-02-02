@@ -7,18 +7,12 @@
 }
 
 .back-button {
-  background-color: #4caf50; /* Green background */
-  color: white; /* White text */
+  color: rgb(0, 0, 0); /* White text */
   padding: 10px 20px; /* Padding around the text */
-  border: none; /* No border */
-  border-radius: 5px; /* Rounded corners */
+  border: none; 
   font-size: 16px; /* Text size */
   cursor: pointer; /* Pointer cursor on hover */
   transition: background-color 0.3s ease; /* Smooth background change on hover */
-}
-
-.back-button:hover {
-  background-color: #45a049; /* Darker green when hovered */
 }
 
 .heading-title {
