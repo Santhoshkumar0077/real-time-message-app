@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axiosInstance from "../lib/axiosInstance";
 import { Link, useNavigate } from "react-router-dom";
+import "../styles/login.css"
 
 const Signup = () => {
   const [username, setUsername] = useState("");
@@ -18,19 +19,36 @@ const Signup = () => {
       setInterval(() => {
         navigate("/login");
       }, 1000);
-    } catch (error) {}
+    } catch (error) {
+      setMessage(error.res.data.message)
+    }
   };
   return (
-    <div className="container">
-      <h1>Signup</h1>
-      <h3>Username</h3>
-      <input type="text" onChange={(e) => setUsername(e.target.value)} />
-      <h3>Password</h3>
-      <input type="password" onChange={(e) => setPassword(e.target.value)} />
-      <button onClick={handleloggin}>Submit</button>
-      <p>{message}</p>
-
-      <Link to={"/login"}>already have an account</Link>
+    <div>
+      <div className="container">
+        <h1 className="items">Signup</h1>
+        <div className="items">Username</div>
+        <input
+          className="items"
+          type="text"
+          name=""
+          id=""
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <div className="items"> Password</div>
+        <input
+          className="items"
+          type="text"
+          name=""
+          id=""
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <button className="items" onClick={handleloggin}>
+          Submit
+        </button>
+        <div className="items">{message}</div>
+        <Link to={"/login"}>Already have an account</Link>
+      </div>
     </div>
   );
 };
