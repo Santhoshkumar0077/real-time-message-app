@@ -39,7 +39,7 @@ a {
   padding: 15px;
   gap: 15px;
   overflow-y: auto;
-  height: 90vh;
+  height: 98vh;
 }
 .conversation {
     display: grid;
@@ -49,7 +49,7 @@ a {
     gap: 15px;
     overflow-y: auto;
     border-left: 1px solid #ddd;
-    height: 90vh;
+    height: 98vh;
     width: auto;
     margin-left: 0%;
     margin-right: 0%;
