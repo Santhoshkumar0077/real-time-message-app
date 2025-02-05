@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 import "../styles/messagelist.css";
 
 const MessageList = () => {
-  const [loading, setLoading] = useState(true);
   const messages = useSelector(
     (state) => state.user.currentconversation.messages
   );
@@ -12,9 +11,6 @@ const MessageList = () => {
   const lastMessageRef = useRef(null);
 
   useEffect(() => {
-    if (messages) {
-      return setLoading(false);
-    }
     setTimeout(() => {
       scrollToBottom();
     }, 100);
