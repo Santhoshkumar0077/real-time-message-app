@@ -17,7 +17,7 @@ const MessageList = () => {
     setTimeout(() => {
       setLoading(false); // Set loading to false once data is loaded
       scrolltobottom();
-    }, 1000); // Simulating fetch delay (adjust as necessary)
+    }, 100); // Simulating fetch delay (adjust as necessary)
   }, [coversation]);
 
   const scrolltobottom = () => {
