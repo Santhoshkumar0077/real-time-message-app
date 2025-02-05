@@ -12,12 +12,13 @@ const MessageList = () => {
   const lastMessageRef = useRef(null);
 
   useEffect(() => {
-    setLoading(true); // Set loading to true while waiting
     setTimeout(() => {
-      setLoading(false); // Set loading to false once data is loaded
-      scrollToBottom(); // Scroll after the content is loaded
-    }, 100); // Simulating fetch delay (adjust timing as necessary)
-  }, [conversation]); // Dependency on conversation changes
+      scrollToBottom();
+    }, 1100);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  }, [conversation]);
 
   // Function to scroll to the last message
   const scrollToBottom = () => {
