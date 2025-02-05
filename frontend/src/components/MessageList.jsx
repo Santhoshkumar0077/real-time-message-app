@@ -12,12 +12,10 @@ const MessageList = () => {
   const lastMessageRef = useRef(null);
 
   useEffect(() => {
+    setLoading(false);
     setTimeout(() => {
       scrollToBottom();
-    }, 1100);
-    setTimeout(() => {
-      setLoading(false);
-    }, 1000);
+    }, 100);
   }, [conversation]);
 
   // Function to scroll to the last message

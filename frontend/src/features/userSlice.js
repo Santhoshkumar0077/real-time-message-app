@@ -48,6 +48,7 @@ const userSlice = createSlice({
     resetback: (state) => {
       state.selecteduserid = null;
       state.currentconversation = {};
+      state.selectedusername = null;
     },
   },
 });
