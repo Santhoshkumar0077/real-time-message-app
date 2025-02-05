@@ -25,7 +25,10 @@ const Signup = () => {
     }
   };
   return (
-    <div class="login-container ">
+    <div
+      class="login-container "
+      style={{ background: "linear-gradient(135deg,rgb(161, 98, 228),rgb(64, 92, 139))" }}
+    >
       <div class="login-box">
         <h2>Please signup to your account</h2>
         <form class="login-form">
