@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import "../styles/messagelist.css";
 
 const MessageList = () => {
+  const [loading, setLoading] = useState(false);
   const messages = useSelector(
     (state) => state.user.currentconversation.messages
   );
