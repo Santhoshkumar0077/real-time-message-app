@@ -12,7 +12,9 @@ const MessageList = () => {
   const lastMessageRef = useRef(null);
 
   useEffect(() => {
-    setLoading(false);
+    if (messages) {
+      return setLoading(false);
+    }
     setTimeout(() => {
       scrollToBottom();
     }, 100);
