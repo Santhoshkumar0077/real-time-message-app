@@ -3,45 +3,50 @@ import { useSelector } from "react-redux";
 import "../styles/messagelist.css";
 
 const MessageList = () => {
-  const [loading, setLoading] = useState(true); // Default loading state is true
+  const [loading, setLoading] = useState(true);
   const messages = useSelector(
     (state) => state.user.currentconversation.messages
   );
-  const coversation = useSelector((state) => state.user.currentconversation);
+  const conversation = useSelector((state) => state.user.currentconversation);
   const id = useSelector((state) => state.user.loggeduserid);
-  const lastmessage = useRef(null);
+  const lastMessageRef = useRef(null);
 
   useEffect(() => {
-    // Simulate loading or fetching messages
     setLoading(true); // Set loading to true while waiting
     setTimeout(() => {
       setLoading(false); // Set loading to false once data is loaded
-      scrolltobottom();
-    }, 100); // Simulating fetch delay (adjust as necessary)
-  }, [coversation]);
+      scrollToBottom(); // Scroll after the content is loaded
+    }, 100); // Simulating fetch delay (adjust timing as necessary)
+  }, [conversation]); // Dependency on conversation changes
 
-  const scrolltobottom = () => {
-    if (lastmessage.current) {
-      lastmessage.current.scrollIntoView({ behavior: "smooth" });
+  // Function to scroll to the last message
+  const scrollToBottom = () => {
+    if (lastMessageRef.current) {
+      lastMessageRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
 
+  // Function to format time for messages
   const formatTime = (timestamp) => {
     const date = new Date(timestamp);
     return date.toLocaleTimeString([], {
       hour: "2-digit",
       minute: "2-digit",
       hour12: false,
-    }); // 24-hour format
+    });
   };
 
   return (
     <div className="message-list">
       {loading ? (
-        <div className="loading-message">Loading messages...</div> // Show loading state
+        <div className="loading-message">Loading messages...</div>
       ) : messages && messages.length > 0 ? (
         messages.map((message, index) => (
-          <div ref={lastmessage} key={index} className="message-container">
+          <div
+            key={index}
+            className="message-container"
+            ref={index === messages.length - 1 ? lastMessageRef : null} // Attach ref to the last message
+          >
             <span
               className={`message-item ${
                 message.loggeduserid === id ? `sent` : `received`
@@ -59,7 +64,7 @@ const MessageList = () => {
           </div>
         ))
       ) : (
-        <div>No messages yet</div> // Show a fallback message when there are no messages
+        <div>No messages yet</div>
       )}
     </div>
   );
